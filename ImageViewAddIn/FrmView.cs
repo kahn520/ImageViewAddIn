@@ -116,6 +116,7 @@ namespace ImageViewAddIn
                 int row = usedRange.Rows.Count;
                 for (int i = 1; i <= row; i++)
                 {
+                    string fileName = usedRange.Range[$"A{i}"].Text;
                     lblCacheInfo.Text = $"{i}/{row}";
                     string url = usedRange.Range[$"{_strCol}{i}"].Text;
                     if (!IsValidUrl(url))
@@ -126,11 +127,11 @@ namespace ImageViewAddIn
                     string file = "";
                     if (dicImageData.ContainsKey(url))
                     {
-                        file = CreateCachePicture(dicImageData[url]);
+                        file = CreateCachePicture(fileName, dicImageData[url]);
                     }
                     else
                     {
-                        file = CreateCachePicture(LoadImage(url));
+                        file = CreateCachePicture(fileName, LoadImage(url));
                     }
 
                     if (File.Exists(file))
@@ -144,9 +145,15 @@ namespace ImageViewAddIn
 
         }
 
-        private string CreateCachePicture(byte[] data)
+        private string CreateCachePicture(string fileName, byte[] data)
         {
-            string file = $@"{GetCacheFolder()}\{Guid.NewGuid():N}.png";
+            string file = $@"{GetCacheFolder()}\{fileName}.png";
+            int index = 1;
+            while (File.Exists(file))
+            {
+                file = $@"{GetCacheFolder()}\{fileName}({index}).png";
+                index++;
+            }
             File.WriteAllBytes(file, data);
             return file;
         }

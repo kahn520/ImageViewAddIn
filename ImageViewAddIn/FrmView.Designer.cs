@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmView));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblCacheInfo = new System.Windows.Forms.Label();
+            this.btnmOpenCacheDir = new System.Windows.Forms.Button();
+            this.btnCache = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txtCol = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnCache = new System.Windows.Forms.Button();
-            this.btnmOpenCacheDir = new System.Windows.Forms.Button();
-            this.lblCacheInfo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +54,34 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(753, 36);
             this.panel1.TabIndex = 0;
+            // 
+            // lblCacheInfo
+            // 
+            this.lblCacheInfo.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblCacheInfo.Location = new System.Drawing.Point(419, 7);
+            this.lblCacheInfo.Name = "lblCacheInfo";
+            this.lblCacheInfo.Size = new System.Drawing.Size(119, 23);
+            this.lblCacheInfo.TabIndex = 3;
+            // 
+            // btnmOpenCacheDir
+            // 
+            this.btnmOpenCacheDir.Location = new System.Drawing.Point(323, 7);
+            this.btnmOpenCacheDir.Name = "btnmOpenCacheDir";
+            this.btnmOpenCacheDir.Size = new System.Drawing.Size(90, 23);
+            this.btnmOpenCacheDir.TabIndex = 2;
+            this.btnmOpenCacheDir.Text = "打开缓存目录";
+            this.btnmOpenCacheDir.UseVisualStyleBackColor = true;
+            this.btnmOpenCacheDir.Click += new System.EventHandler(this.btnmOpenCacheDir_Click);
+            // 
+            // btnCache
+            // 
+            this.btnCache.Location = new System.Drawing.Point(242, 8);
+            this.btnCache.Name = "btnCache";
+            this.btnCache.Size = new System.Drawing.Size(75, 23);
+            this.btnCache.TabIndex = 2;
+            this.btnCache.Text = "缓存图片";
+            this.btnCache.UseVisualStyleBackColor = true;
+            this.btnCache.Click += new System.EventHandler(this.btnCache_Click);
             // 
             // button1
             // 
@@ -82,6 +111,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(0, 36);
             this.pictureBox1.Name = "pictureBox1";
@@ -89,34 +119,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnCache
-            // 
-            this.btnCache.Location = new System.Drawing.Point(242, 8);
-            this.btnCache.Name = "btnCache";
-            this.btnCache.Size = new System.Drawing.Size(75, 23);
-            this.btnCache.TabIndex = 2;
-            this.btnCache.Text = "缓存图片";
-            this.btnCache.UseVisualStyleBackColor = true;
-            this.btnCache.Click += new System.EventHandler(this.btnCache_Click);
-            // 
-            // btnmOpenCacheDir
-            // 
-            this.btnmOpenCacheDir.Location = new System.Drawing.Point(323, 7);
-            this.btnmOpenCacheDir.Name = "btnmOpenCacheDir";
-            this.btnmOpenCacheDir.Size = new System.Drawing.Size(90, 23);
-            this.btnmOpenCacheDir.TabIndex = 2;
-            this.btnmOpenCacheDir.Text = "打开缓存目录";
-            this.btnmOpenCacheDir.UseVisualStyleBackColor = true;
-            this.btnmOpenCacheDir.Click += new System.EventHandler(this.btnmOpenCacheDir_Click);
-            // 
-            // lblCacheInfo
-            // 
-            this.lblCacheInfo.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblCacheInfo.Location = new System.Drawing.Point(419, 7);
-            this.lblCacheInfo.Name = "lblCacheInfo";
-            this.lblCacheInfo.Size = new System.Drawing.Size(119, 23);
-            this.lblCacheInfo.TabIndex = 3;
             // 
             // FrmView
             // 
